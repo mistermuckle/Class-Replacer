@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<title>Class Replacer Demo</title>
+<style>
+body {font-family: Helvetica, Arial, sans-serif}
+#content {max-width: 800px; margin: 10px auto}
+form > div {margin-top: 10px; padding: 5px}
+label {display: block}
+</style>
+<link rel=stylesheet href=http://blueprintcss.org/blueprint/screen.css>
+<script src=../ClassReplacer.js></script>
+<script src=../ClassMaps/Blueprint.ClassMap.js></script>
+<script>
+window.onload = function() {
+    ClassReplacer.replaceClasses();
+};
+</script>
+</head>
+
+<body>
+<div id=content>
+<h1>Class Replacer Demo</h1>
+<form class=_form_ method=post action=#>
+    <div>
+        <label for=first-name>First Name</label>
+        <input type=text class=_text-field_>
+    </div>
+
+    <div class=_invalid_>
+        <label for=password class=_error-text_>Password</label>
+        <input type=password class=_text-field_>
+        <div>That password wasn’t strong enough.</div>
+    </div>
+
+    <div>
+        <input type="submit" class="_button_ _rounded_" value="Submit">
+    </div>
+</form>
+</div>
+</body>
+</html>
